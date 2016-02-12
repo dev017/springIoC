@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="product1" class="entities.Product">
+		<property name="id" value="p01" />
+		<property name="name" value="Name 1" />
+		<property name="price" value="1000" />
+		<property name="category" ref="category1" />
+		<property name="colors">
+			<list>
+				<value> Color 1</value>
+				<value> Color 2</value>
+				<value> Color 3</value>
+			</list>
+		</property>
+		<property name="creationDate">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="2015-12-05" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="product2" class="entities.Product">
+		<constructor-arg value="p02" />
+		<constructor-arg value="Name 2" />
+		<constructor-arg value="2000" type="long" />
+		<constructor-arg ref="category1" />
+		<constructor-arg>
+			<list>
+				<value> Color 1</value>
+				<value> Color 2</value>
+				<value> Color 3</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="2015-12-05" />
+			</bean>
+		</constructor-arg>
+	</bean>
+
+	<bean id="category1" class="entities.Category">
+		<property name="id" value="c01" />
+		<property name="name" value="Category 1" />
+	</bean>
+
+	<bean id="dateFormat" class="java.text.SimpleDateFormat">
+		<constructor-arg value="yyyy-MM-dd"></constructor-arg>
+	</bean>
+
+
+	<bean id="human1" class="entities.Human">
+		<property name="name" value="Human 1" />
+		<property name="gender" value="male" />
+	</bean>
+
+	<bean id="employee1" class="entities.Employee" parent="human1">
+		<property name="id" value="e1" />
+		<property name="salary" value="9000" />
+	</bean>
+
+</beans>
