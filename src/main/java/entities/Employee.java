@@ -11,9 +11,10 @@ public class Employee extends Human {
 		this.salary = salary;
 	}
 
-	public Employee(){
+	public Employee() {
 		super();
 	}
+
 	public String getId() {
 		return id;
 	}

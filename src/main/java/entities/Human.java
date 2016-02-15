@@ -11,8 +11,9 @@ public class Human {
 		this.gender = gender;
 	}
 
-	public Human(){}
-	
+	public Human() {
+	}
+
 	public String getName() {
 		return name;
 	}

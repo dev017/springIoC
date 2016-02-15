@@ -9,15 +9,15 @@ public class Product {
 	private long price;
 	private Category category;
 	private List<String> colors;
-private Date creationDate;
-	
-	public Date getCreationDate() {
-	return creationDate;
-}
+	private Date creationDate;
 
-public void setCreationDate(Date creationDate) {
-	this.creationDate = creationDate;
-}
+	public Date getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
 
 	public Product() {
 	}
@@ -37,7 +37,6 @@ public void setCreationDate(Date creationDate) {
 		this.category = category;
 	}
 
-	
 	public Product(String id, String name, long price, Category category,
 			List<String> colors) {
 		super();
@@ -48,7 +47,6 @@ public void setCreationDate(Date creationDate) {
 		this.colors = colors;
 	}
 
-	
 	public Product(String id, String name, long price, Category category,
 			List<String> colors, Date creationDate) {
 		super();
